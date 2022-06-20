@@ -1,19 +1,16 @@
 {
-  "posts": [
+  "tasks": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "text": "Grocery Shopping ",
+      "day": "Thursday at 2pm",
+      "reminder": true,
+      "id": 1
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "text": "Pick Kids Up From School",
+      "day": "Tuesday At 2pm",
+      "reminder": true,
+      "id": 2
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
