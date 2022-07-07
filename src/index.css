@@ -61,7 +61,7 @@ body {
   cursor: pointer;
 }
 
-.task.reminder {
+.task.approved {
   border-left: 5px solid green;
 }
 
@@ -93,7 +93,7 @@ body {
 
 .form-control-check {
   display: flex;
-  align-items: center;
+  align-items: right;
   justify-content: space-between;
 }
 

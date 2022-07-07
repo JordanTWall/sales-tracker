@@ -21,7 +21,7 @@ const App = () => {
 
   //Fetch Tasks
   const fetchTasks = async () => {
-    const res = await fetch('http://localhost:8000/tasks')
+    const res = await fetch('http://localhost:3000/tasks')
     const data = await res.json()
     return data
   };
@@ -29,7 +29,7 @@ const App = () => {
   //Fetch Single Task 
 
   const fetchTask = async (id) => {
-    const res = await fetch(`http://localhost:8000/tasks/${id}`)
+    const res = await fetch(`http://localhost:3000/tasks/${id}`)
     const data = await res.json()
     return data
   };
@@ -37,7 +37,7 @@ const App = () => {
   // Add Task
 
   const addTask = async (task) => {
-    const res = await fetch("http://localhost:8000/tasks", {
+    const res = await fetch("http://localhost:3000/tasks", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -51,18 +51,18 @@ const App = () => {
 
   // Delete Task
   const deleteTask = async (id) => {
-    await fetch(`http://localhost:8000/tasks/${id}`, {
+    await fetch(`http://localhost:3000/tasks/${id}`, {
       method: "DELETE",
     });
     setTasks(tasks.filter((task) => task.id !== id));
   };
 
-  // Toggle Reminder
-  const toggleReminder = async (id) => {
+  // Toggle Approved
+  const toggleApproved = async (id) => {
     const taskToToggle = await fetchTask(id)
-    const updTask ={...taskToToggle, reminder: !taskToToggle.reminder}
+    const updTask ={...taskToToggle, approved: !taskToToggle.approved}
 
-    const res = await fetch(`http://localhost:8000/tasks/${id}`, {
+    const res = await fetch(`http://localhost:3000/tasks/${id}`, {
       method: 'PUT',
       headers: {
         'Content-type' : 'application/json'
@@ -74,7 +74,7 @@ const App = () => {
 
     setTasks(
       tasks.map((task) =>
-        task.id === id ? { ...task, reminder: data.reminder } : task
+        task.id === id ? { ...task, approved: data.approved } : task
       )
     );
   };
@@ -96,10 +96,10 @@ const App = () => {
                   <Tasks
                     tasks={tasks}
                     onDelete={deleteTask}
-                    onToggle={toggleReminder}
+                    onToggle={toggleApproved}
                   />
                 ) : (
-                  'No Tasks To Show'
+                  'No Recorded Sales'
                 )}
               </>
             }

@@ -1,16 +1,11 @@
 {
   "tasks": [
     {
-      "text": "Grocery Shopping ",
-      "day": "Thursday at 2pm",
-      "reminder": true,
+      "text": "Bob Smith",
+      "carrier": "Mutual of Nebraska",
+      "day": "2022-07-07",
+      "approved": true,
       "id": 1
-    },
-    {
-      "text": "Pick Kids Up From School",
-      "day": "Tuesday At 2pm",
-      "reminder": true,
-      "id": 2
     }
   ]
 }
