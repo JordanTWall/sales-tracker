@@ -8,6 +8,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  background-color: #6A8D73;
 }
 
 .container {
@@ -15,9 +16,10 @@ body {
   margin: 30px auto;
   overflow: auto;
   min-height: 300px;
-  border: 2px solid steelblue;
+  border: 5px solid black  ;
   padding: 30px;
-  border-radius: 5px;
+  border-radius: 25px;
+  background-color: #E4FFE1;
 }
 
 .header {
@@ -55,7 +57,7 @@ body {
 }
 
 .task {
-  background: #f4f4f4;
+  background: rgb(218, 217, 217);
   margin: 5px;
   padding: 10px 20px;
   cursor: pointer;
@@ -69,6 +71,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+h1 {
+  font-family: 'Bitter', serif;
 }
 
 .add-form {
@@ -109,4 +114,9 @@ body {
 footer {
   margin-top: 30px;
   text-align: center;
+}
+
+.moneyLogo {
+  height: 50px;
+  width: 50px;
 }

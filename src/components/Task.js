@@ -1,4 +1,5 @@
 import { FaTimes } from "react-icons/fa";
+import { format } from 'date-fns';
 
 const Task = ({ task, onDelete, onToggle }) => {
   return (
@@ -13,8 +14,9 @@ const Task = ({ task, onDelete, onToggle }) => {
           onClick={() => onDelete(task.id)}
         />
       </h3>
-      <p>{task.day}</p>
       <p>{task.carrier}</p>
+      <p> ${task.premium * 12} AP</p>
+      <p>{format(new Date(task.day), 'MM/dd/yyyy')}</p>
     </div>
   );
 };

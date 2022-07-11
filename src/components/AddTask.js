@@ -3,6 +3,7 @@ import { useState } from 'react'
 const AddTask = ({ onAdd }) => {
   const [text, setText] = useState('')
   const [carrier, setCarrier] = useState('')
+  const [premium, setPremium] = useState('')
   const [day, setDay] = useState('')
   const [approved, setApproved] = useState(false)
 
@@ -19,15 +20,21 @@ const AddTask = ({ onAdd }) => {
       return
     }
 
+    if (!premium) {
+      alert('Please input a monthly premium')
+      return
+    }
+
     if (!day) {
       alert('Please add a Day & Time')
       return
     }
 
-    onAdd({ text, carrier, day, approved })
+    onAdd({ text, carrier, premium, day, approved })
 
     setText('')
     setCarrier('')
+    setPremium('')
     setDay('')
     setApproved(false)
   }
@@ -50,6 +57,7 @@ const AddTask = ({ onAdd }) => {
           onChange={(e) => setText(e.target.value)}
         />
       </div>
+      
       <div className="form-control">
         <label>Carrier</label>
         <input
@@ -57,6 +65,17 @@ const AddTask = ({ onAdd }) => {
           placeholder='Add Carrier'
           value={carrier}
           onChange={(e) => setCarrier(e.target.value)}
+        />
+      </div>
+      <div className="form-control">
+        <label>Monthly Premium</label>
+        <input
+          type='number'
+          min='0.01'
+          step='0.01'
+          placeholder='Monthly Premium'
+          value={premium}
+          onChange={(e) => setPremium(e.target.value)}
         />
       </div>
       <div className='form-control'>
